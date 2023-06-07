@@ -21,7 +21,7 @@ COPY nginx/reload-after-renew-certs.sh /reload-after-renew-certs.sh
 RUN chmod 755 /reload-after-renew-certs.sh && \
     printf '0 5 1 * * /reload-after-renew-certs.sh >/dev/null 2>&1\n' >> /etc/crontabs/root
 
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY nginx/default.conf /default.conf
 RUN chmod 755 /etc/nginx/conf.d/default.conf
 
 ENV NGINX_CONF_D /home/docker/nginx/conf.d
